@@ -18,6 +18,7 @@ class HomeScreen extends GetView<HomeScreenController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorsUtil.backgroundColor,
       body: Container(
         color: ColorsUtil.backgroundColor,
         child: SingleChildScrollView(
@@ -27,14 +28,13 @@ class HomeScreen extends GetView<HomeScreenController> {
               Padding(
                 padding: scale.getPadding(
                   left: 16,
-                  right: 16,
-                  top: 13,
+                  top: 43,
                   bottom: 33,
                 ),
-                child: AppBar(
-                  backgroundColor: ColorsUtil.backgroundColor,
+                child: ListTile(
                   leading: CircleAvatar(
                     radius: scale.getScaledFont(22),
+                    backgroundColor: Colors.transparent,
                     backgroundImage: const AssetImage(
                       'assets/profile.png',
                     ),
@@ -60,35 +60,40 @@ class HomeScreen extends GetView<HomeScreenController> {
                       )
                     ],
                   ),
-                  actions: [
-                    CircleAvatar(
-                      radius: scale.getScaledFont(16),
-                      backgroundColor: ColorsUtil.backgroundShadowColor,
-                      child: Center(
-                        child: Image.asset(
-                          'assets/message.png',
-                          height: scale.getScaledHeight(13),
-                          width: scale.getScaledWidth(13),
-                          fit: BoxFit.cover,
+                  trailing: SizedBox(
+                    width: scale.getScaledWidth(80),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          radius: scale.getScaledFont(16),
+                          backgroundColor: ColorsUtil.backgroundShadowColor,
+                          child: Center(
+                            child: Image.asset(
+                              'assets/message.png',
+                              height: scale.getScaledHeight(13),
+                              width: scale.getScaledWidth(13),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: scale.getScaledWidth(10),
-                    ),
-                    CircleAvatar(
-                      radius: scale.getScaledFont(16),
-                      backgroundColor: ColorsUtil.backgroundShadowColor,
-                      child: Center(
-                        child: Image.asset(
-                          'assets/notification_bell.png',
-                          height: scale.getScaledHeight(13),
-                          width: scale.getScaledWidth(13),
-                          fit: BoxFit.cover,
+                        SizedBox(
+                          width: scale.getScaledWidth(10),
                         ),
-                      ),
-                    )
-                  ],
+                        CircleAvatar(
+                          radius: scale.getScaledFont(16),
+                          backgroundColor: ColorsUtil.backgroundShadowColor,
+                          child: Center(
+                            child: Image.asset(
+                              'assets/notification_bell.png',
+                              height: scale.getScaledHeight(13),
+                              width: scale.getScaledWidth(13),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               ),
               GestureDetector(
@@ -235,7 +240,7 @@ class HomeScreen extends GetView<HomeScreenController> {
                   });
                 },
                 child: Container(
-                  margin: scale.getMargin(horizontal: 12),
+                  margin: scale.getMargin(horizontal: 10),
                   decoration: BoxDecoration(
                     color: ColorsUtil.backgroundShadowColor,
                     borderRadius: BorderRadius.circular(12),
@@ -280,10 +285,10 @@ class HomeScreen extends GetView<HomeScreenController> {
                             ),
                           ),
                           Positioned(
-                            left: 21.5,
-                            top: 21.5,
+                            left: 16.5,
+                            top: 16.5,
                             child: CircularPercentIndicator(
-                              radius: 24,
+                              radius: 20,
                               progressColor: Colors.blue,
                               lineWidth: 10,
                               circularStrokeCap: CircularStrokeCap.round,

@@ -177,7 +177,7 @@ class ArticleTask extends StatelessWidget {
                     top: 12,
                     bottom: 8
                   ),
-                  height: scale.getScaledHeight(20),
+                  height: scale.getScaledHeight(15),
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: article.tags?.length?? 0,
@@ -187,7 +187,7 @@ class ArticleTask extends StatelessWidget {
                           left: 5,
                           right: 12,
                           top: 2,
-                          bottom: 3,
+                          bottom: 2,
                         ),
                         margin: scale.getMargin(
                           right: 10,
